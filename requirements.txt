@@ -5,7 +5,6 @@ pandas==2.2.1
 numpy==1.26.4
 
 # Geospatial data handling
-pygeos
 geopandas==0.14.3
 shapely==2.0.3 # Often a key dependency for geopandas
 
