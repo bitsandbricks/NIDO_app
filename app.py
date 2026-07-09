@@ -158,7 +158,7 @@ if gdf is not None:
         m.get_root().html.add_child(Element(legend_html))
 
         m.fit_bounds([[bounds[1], bounds[0]], [bounds[3], bounds[2]]])
-        st_folium(m, width=1200, height=700, returned_objects=[])
+        st_folium(m, width=1200, height=700, returned_objects=[], use_container_width=True)
     
     else:
         st.warning(f"⚠️ No hay datos disponibles para procesar con la configuración actual en {selected_province}.")
