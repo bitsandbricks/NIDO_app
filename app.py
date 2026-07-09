@@ -123,7 +123,8 @@ if gdf is not None:
         bounds = map_data_gdf.total_bounds
         map_center = [(bounds[1] + bounds[3]) / 2, (bounds[0] + bounds[2]) / 2]
         
-        m = folium.Map(location=map_center, zoom_start=6, tiles="https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/mapabase_gris@EPSG%3A3857@png/{z}/{x}/{-y}.png", attr="Mapa base: Instituto Geográfico Nacional (IGN)")
+        m = folium.Map(location=map_center, zoom_start=4, tiles="https://wms.ign.gob.ar/geoserver/gwc/service/tms/1.0.0/mapabase_gris@EPSG%3A3857@png/{z}/{x}/{-y}.png", attr="Mapa base: Instituto Geográfico Nacional (IGN)")
+        m.fit_bounds([[bounds[1], bounds[0]], [bounds[3], bounds[2]]])
 
         color_dict = {"Muy alto": "#3288bd", "Alto": "#99d594", "Medio": "#fee08b", "Bajo": "#fc8d59", "Muy bajo": "#d53e4f"}
 
