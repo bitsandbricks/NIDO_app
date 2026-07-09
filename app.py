@@ -146,7 +146,7 @@ if gdf is not None:
             ).add_to(m)
 
         folium.map.CustomPane("labels").add_to(m)
-        folium.TileLayer("cartodbpositrononlylabels", pane="labels").add_to(m)
+        #folium.TileLayer("cartodbpositrononlylabels", pane="labels").add_to(m)
 
         present_labels = sorted(map_data_gdf['NIDO_scale'].unique(), key=list(color_dict.keys()).index)
         legend_html = '''<div style="position: fixed; bottom: 50px; right: 50px; width: 160px; border:2px solid grey; z-index:9999; font-size:14px; color:black; background-color:white; border-radius: 5px;"><h4 style="margin: 5px 10px;">Indice NIDO</h4><ul style="list-style-type: none; padding-left: 10px; margin-top: 5px; margin-bottom: 5px;">'''
