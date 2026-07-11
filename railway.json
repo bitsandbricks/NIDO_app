@@ -2,7 +2,7 @@
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "mkdir -p data && apt-get update -qq && apt-get install -y -qq tippecanoe python3-pip && curl -sL --fail -o /tmp/pmtiles.tar.gz https://github.com/protomaps/go-pmtiles/releases/download/v1.31.0/go-pmtiles_1.31.0_Linux_x86_64.tar.gz && tar xzf /tmp/pmtiles.tar.gz -C /usr/local/bin pmtiles && test -x /usr/local/bin/pmtiles && rm /tmp/pmtiles.tar.gz && rm -rf node_modules package-lock.json && npm install && curl -sL -o data/indicadores.gpkg \"${GPKG_URL:-https://github.com/bitsandbricks/NIDO_app/releases/download/v1/indicadores.gpkg}\" && python3 -m pip install -q --break-system-packages -r requirements.txt && python3 scripts/prepare_data.py && npm install @rolldown/binding-linux-x64-gnu && npm run build"
+    "buildCommand": "mkdir -p data && apt-get update -qq && apt-get install -y -qq tippecanoe python3-pip && curl -sL --fail -o /tmp/pmtiles.tar.gz https://github.com/protomaps/go-pmtiles/releases/download/v1.31.0/go-pmtiles_1.31.0_Linux_x86_64.tar.gz && tar xzf /tmp/pmtiles.tar.gz -C /usr/local/bin pmtiles && test -x /usr/local/bin/pmtiles && rm /tmp/pmtiles.tar.gz && npm install && curl -sL -o data/indicadores.gpkg \"${GPKG_URL:-https://github.com/bitsandbricks/NIDO_app/releases/download/v1/indicadores.gpkg}\" && python3 -m pip install -q --break-system-packages -r requirements.txt && python3 scripts/prepare_data.py && npm install @rolldown/binding-linux-x64-gnu && npm run build"
   },
   "deploy": {
     "numReplicas": 1,
