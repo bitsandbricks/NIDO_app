@@ -1,4 +1,5 @@
 import json
+import shutil
 import subprocess
 import tempfile
 from pathlib import Path
@@ -8,6 +9,8 @@ import numpy as np
 
 DATA_DIR = Path(__file__).resolve().parent.parent / 'data'
 PUBLIC_DATA_DIR = Path(__file__).resolve().parent.parent / 'public' / 'data'
+
+PMTILES_BIN = shutil.which('pmtiles', path='/usr/local/bin:/usr/bin:/bin') or 'pmtiles'
 
 VARIABLES = {
     'salud': ['cobertura_salud', 'cercania_a_salud'],
@@ -110,7 +113,7 @@ def main():
 
     print("\U0001f504 Convirtiendo MBTiles a PMTiles...")
     result2 = subprocess.run([
-        'pmtiles', 'convert',
+        PMTILES_BIN, 'convert',
         str(mbtiles_path),
         str(pmtiles_path),
     ], capture_output=True, text=True)
