@@ -2,7 +2,7 @@
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "mkdir -p data && apt-get update -qq && apt-get install -y -qq tippecanoe python3-pip && export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && nvm install 20 && npm install -g pmtiles && npm install && curl -sL -o data/indicadores.gpkg \"${GPKG_URL:-https://github.com/bitsandbricks/NIDO_app/releases/download/v1/indicadores.gpkg}\" && python3 -m pip install -q -r requirements.txt && python3 scripts/prepare_data.py && npm run build"
+    "buildCommand": "mkdir -p data && apt-get update -qq && apt-get install -y -qq tippecanoe python3-pip && npm install -g pmtiles && npm install && curl -sL -o data/indicadores.gpkg \"${GPKG_URL:-https://github.com/bitsandbricks/NIDO_app/releases/download/v1/indicadores.gpkg}\" && python3 -m pip install -q -r requirements.txt && python3 scripts/prepare_data.py && npm run build"
   },
   "deploy": {
     "numReplicas": 1,
