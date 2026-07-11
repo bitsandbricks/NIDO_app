@@ -1,6 +1,2 @@
-# requirements.txt
-geopandas
-folium
-streamlit>=1.20.0
-streamlit_folium
-branca
+geopandas>=1.0
+numpy>=1.26

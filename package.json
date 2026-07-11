@@ -1,0 +1,22 @@
+{
+  "name": "nido-bigfish",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepare-data": "python3 scripts/prepare_data.py"
+  },
+  "dependencies": {
+    "maplibre-gl": "^5.24.0",
+    "pmtiles": "^4.4.1"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "serve": "^14.2.6",
+    "svelte": "^5.56.4",
+    "vite": "^8.1.1"
+  }
+}

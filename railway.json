@@ -1,0 +1,13 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "apt-get update -qq && apt-get install -y -qq tippecanoe python3-pip && npm install -g pmtiles && npm ci && curl -sL -o data/indicadores.gpkg \"${GPKG_URL:-https://github.com/bitsandbricks/NIDO_app/releases/download/v1/indicadores.gpkg}\" && python3 -m pip install -q -r requirements.txt && python3 scripts/prepare_data.py && npm run build"
+  },
+  "deploy": {
+    "numReplicas": 1,
+    "startCommand": "npx serve dist -l $PORT",
+    "healthcheckPath": "/",
+    "restartPolicyType": "ON_FAILURE"
+  }
+}
